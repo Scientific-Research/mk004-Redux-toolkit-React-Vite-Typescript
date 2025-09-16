@@ -1,9 +1,8 @@
 // import './App.css';
-
 import { NavLink, Route, Routes } from 'react-router-dom';
-import { PageWelcome } from './components/PageWelcome';
-import { PageBooks } from './components/PageBooks';
-import { PageCart } from './components/PageCart';
+import { PageWelcome } from '../components/PageWelcome';
+import { PageBooks } from '../components/PageBooks';
+import { PageCart } from '../components/PageCart';
 
 function App() {
   return (
