@@ -1,27 +1,34 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { add, subtract } from '../../features/cart/cartSlice';
+// import { add, subtract } from '../../features/cart/cartSlice';
+import { addCartItem } from '../../features/cart/cartSlice';
 import { RootState } from '../../app/store';
 
 export const PageBooks = () => {
   const dispatch = useDispatch();
   const selectCart = (state: RootState) => state.cart;
-  const { count } = useSelector(selectCart);
+  // const { count } = useSelector(selectCart);
+  const { books, cartItems } = useSelector(selectCart);
 
-  const handleSubtractOne = () => {
-    dispatch(subtract());
-  };
+  // const handleSubtractOne = () => {
+  //   dispatch(subtract());
+  // };
 
-  const handleAddOne = () => {
-    dispatch(add());
-  };
+  // const handleAddOne = () => {
+  //   dispatch(add());
+  // };
 
   return (
     <div className="pageBooks">
       <p>Welcome to the Books page.</p>
-      <button onClick={handleSubtractOne}>Subtract One</button>
-      <button onClick={handleAddOne}>Add One</button>
+      {/* <button onClick={handleSubtractOne}>Subtract One</button>
+      <button onClick={handleAddOne}>Add One</button> */}
       <hr />
-      <span>{count}</span>
+      {/* <span>{count}</span> */}
+      {books.map((book) => (
+        <div>
+          <p>{book.title}</p>
+        </div>
+      ))}
     </div>
   );
 };
