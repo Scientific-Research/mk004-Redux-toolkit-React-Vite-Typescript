@@ -1,9 +1,9 @@
 import { configureStore, UnknownAction } from '@reduxjs/toolkit';
-// TODO: import slice
+import { cartSlice } from '../features/cart/cartSlice';
 
 export const store = configureStore({
-  reducer: function (state: any, action: UnknownAction) {
-    console.log('function not implemented!');
+  reducer: {
+    cart: cartSlice.reducer,
   },
 });
 
