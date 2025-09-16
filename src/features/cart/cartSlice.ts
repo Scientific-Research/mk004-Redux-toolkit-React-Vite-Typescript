@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IBook, ICartItem, IState } from '../../Interfaces';
 
 const books = [
   {
@@ -17,21 +18,6 @@ const books = [
     title: 'Rust Web Programming',
   },
 ];
-
-interface IBook {
-  id: number;
-  idCode: string;
-  title: string;
-}
-
-interface ICartItem {
-  book: IBook;
-}
-
-interface IState {
-  books: IBook[];
-  cartItems: ICartItem[];
-}
 
 const initialState: IState = {
   // count: 0,

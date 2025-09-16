@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 // import { add, subtract } from '../../features/cart/cartSlice';
-import { addCartItem } from '../../features/cart/cartSlice';
 import { RootState } from '../../app/store';
+import { IBook, ICartItem } from '../../Interfaces';
+import { NavLink } from 'react-router-dom';
 
 export const PageBooks = () => {
   const dispatch = useDispatch();
@@ -17,6 +18,10 @@ export const PageBooks = () => {
   //   dispatch(add());
   // };
 
+  const handleCartItem = (book: IBook) => {
+    dispatch({ type: 'cart/addCartItem', payload: { book: book } });
+  };
+
   return (
     <div className="pageBooks">
       <p>Welcome to the Books page.</p>
@@ -26,11 +31,19 @@ export const PageBooks = () => {
       {/* <span>{count}</span> */}
       <div className="books">
         {books.map((book) => (
-          <div className="book" key={book.id}>
+          <div
+            onClick={() => handleCartItem(book)}
+            className="book"
+            key={book.id}
+          >
             <img src={`/images/${book.idCode}.jpg`} alt="" />
           </div>
         ))}
       </div>
+      <p>
+        You have {cartItems.length} items in your{' '}
+        <NavLink to="/cart">Cart </NavLink>
+      </p>
     </div>
   );
 };
