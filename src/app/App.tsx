@@ -1,5 +1,5 @@
 // import './App.css';
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { NavLink, Route, Routes, Navigate } from 'react-router-dom';
 import { PageWelcome } from '../common/pages/PageWelcome';
 import { PageBooks } from '../common/pages/PageBooks';
 import { PageCart } from '../common/pages/PageCart';
@@ -18,6 +18,7 @@ function App() {
         <Route path="welcome" element={<PageWelcome />}></Route>
         <Route path="books" element={<PageBooks />}></Route>
         <Route path="cart" element={<PageCart />}></Route>
+        <Route path="/" element={<Navigate to="welcome" />}></Route>
       </Routes>
     </div>
   );
