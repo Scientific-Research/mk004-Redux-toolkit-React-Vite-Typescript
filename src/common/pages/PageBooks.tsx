@@ -25,8 +25,8 @@ export const PageBooks = () => {
       <hr />
       {/* <span>{count}</span> */}
       {books.map((book) => (
-        <div>
-          <p>{book.title}</p>
+        <div className="book" key={book.id}>
+          <img src={`/images/${book.idCode}.jpg`} alt="" />
         </div>
       ))}
     </div>
