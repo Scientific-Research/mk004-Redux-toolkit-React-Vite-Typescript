@@ -9,8 +9,29 @@ body {
   margin: 1rem;
   padding: 1rem;
   font-family: sans-serif;
+  color: #d6c5c5;
 
   h1 {
     color: yellow;
+  }
+
+  nav {
+    background-color: #222;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+
+    a {
+      margin-right: 1rem;
+      text-decoration: none;
+      color: rgb(183, 183, 49);
+
+      &:hover {
+        color: aqua;
+      }
+    }
+    a.active {
+      color: rgb(31, 31, 205);
+    }
   }
 }
