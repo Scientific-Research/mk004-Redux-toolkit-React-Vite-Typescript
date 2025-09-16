@@ -8,9 +8,9 @@ export const PageCart = () => {
   return (
     <div className="pageCart">
       <div className="cartItems">
-        {cartItems.map((cartItem) => {
+        {cartItems.map((cartItem, index) => {
           return (
-            <div className="cartItem">
+            <div className="cartItem" key={index}>
               <img src={`images/${cartItem.book.idCode}.jpg`} />
               <div className="title">{cartItem.book.title}</div>
             </div>
