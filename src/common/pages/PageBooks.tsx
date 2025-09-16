@@ -24,11 +24,13 @@ export const PageBooks = () => {
       <button onClick={handleAddOne}>Add One</button> */}
       <hr />
       {/* <span>{count}</span> */}
-      {books.map((book) => (
-        <div className="book" key={book.id}>
-          <img src={`/images/${book.idCode}.jpg`} alt="" />
-        </div>
-      ))}
+      <div className="books">
+        {books.map((book) => (
+          <div className="book" key={book.id}>
+            <img src={`/images/${book.idCode}.jpg`} alt="" />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
